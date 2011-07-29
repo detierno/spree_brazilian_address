@@ -1,6 +1,6 @@
 Address.class_eval do
   validates :cpf, :presence => true
-  validate :cpf_formated, :on => :create
+  validate :cpf_formated
   validate :cpf_validate
   
   def cpf_validate
