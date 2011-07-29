@@ -1,9 +1,9 @@
 Address.class_eval do
   validates :cpf, :presence => true
-  validate :cpf_formated
-  validate :cpf_validete
+  validate :cpf_formated, :on => :create
+  validate :cpf_validate
   
-  def cpf_validete
+  def cpf_validate
 
     nulos = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000}
     valor = cpf.scan /[0-9]/
