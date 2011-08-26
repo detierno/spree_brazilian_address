@@ -4,17 +4,21 @@ source 'http://rubygems.org'
 gem 'selenium-webdriver', '0.2.1'
 
 group :test do
-  gem 'rspec-rails', '= 2.6.1'
   gem 'factory_girl', '= 1.3.3'
   gem 'factory_girl_rails', '= 1.0.1'
   gem 'rcov'
   gem 'shoulda'
   gem 'faker'
+  gem 'guard-rspec'
   if RUBY_VERSION < "1.9"
     gem "ruby-debug"
   else
     gem "ruby-debug19"
   end
+end
+
+group :test, :development do
+  gem "rspec-rails"
 end
 
 group :cucumber do
@@ -24,6 +28,7 @@ group :cucumber do
   gem 'capybara', '= 1.0.0'
   gem 'factory_girl', '= 1.3.3'
   gem 'factory_girl_rails', '= 1.0.1'
+  gem 'growl'
   gem 'faker'
   gem 'launchy'
 

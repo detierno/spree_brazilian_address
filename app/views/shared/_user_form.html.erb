@@ -1,0 +1,44 @@
+<p>
+  Personal<%= radio_button('user', 'account_type', 'personal') %><br />
+  Business<%= radio_button('user', 'account_type', 'business') %>
+</p>
+
+
+<p id="user_cpf_box">
+  <%= f.label :cpf, t("cpf") %><br />
+  <%= f.text_field :cpf, :class => 'title'  %>
+</p>
+
+<p id="user_razao_box">
+  <%= f.label :razao_social, t("razao_social") %><br />
+  <%= f.text_field :razao_social, :class => 'title'  %>
+</p>
+
+<p id="user_cnpj_box">
+  <%= f.label :cnpj, t("cnpj") %><br />
+  <%= f.text_field :cnpj, :class => 'title'  %>
+</p>
+<p id="user_inscricao_box">
+  <%= f.label :inscricao_estadual, t("inscricao_estadual") %><br />
+  <%= f.text_field :inscricao_estadual, :class => 'title'  %>
+</p>
+<p>
+  <%= f.label :email, t("email") %><br />
+  <%= f.text_field :email, :class => 'title'  %>
+</p>
+
+<div id="password-credentials">
+  <p>
+    <%= f.label :password, t("password") %><br />
+    <%= f.password_field :password, :class => 'title'  %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation, t(:confirm_password) %><br />
+    <%= f.password_field :password_confirmation, :class => 'title' %>
+  </p>
+</div>
+
+<div data-hook="signup_below_password_fields"></div>
+
+<%= javascript_include_tag 'brazilian_address' %>
