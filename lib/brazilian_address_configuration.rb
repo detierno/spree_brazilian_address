@@ -1,3 +1,3 @@
 class BrazilianAddressConfiguration < Configuration
-  preference :neighborhood, :boolean, :default => false
+  preference :neighborhood, :boolean, :default => true
 end
