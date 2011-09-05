@@ -21,4 +21,8 @@ describe Address do
     
   end
   
+  context "With attributes for user" do
+    
+  end
+  
 end

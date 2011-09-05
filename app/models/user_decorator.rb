@@ -1,11 +1,11 @@
 User.class_eval do
   validates_inclusion_of :account_type, :in => %w(personal business)
   validate :valid_cpf, :if => :personal_account?
-  validates_uniqueness_of :cpf, :if => :valid_cpf
+  validates_uniqueness_of :cpf, :if => :personal_account?
   
-  validates_presence_of :razao_social, :unless => :personal_account? 
-  validate :valid_cnpj, :unless => :personal_account?
-  validates_uniqueness_of :cnpj, :unless => :personal_account?
+  validates_presence_of :razao_social, :if => :business_account? 
+  validate :valid_cnpj, :if => :business_account?
+  validates_uniqueness_of :cnpj, :if => :business_account?
   
   attr_accessible :cpf, :cnpj, :razao_social, :inscricao_estadual, :account_type
  
